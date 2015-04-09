@@ -2,7 +2,6 @@
 using bfstats.core.Api;
 using bfstats.core.Data;
 using Microsoft.Azure.WebJobs;
-using Microsoft.WindowsAzure;
 
 namespace bfstats.getbfhjob
 {
@@ -11,14 +10,12 @@ namespace bfstats.getbfhjob
         [NoAutomaticTrigger]
         public static void GetStatsFromBFH(TextWriter log)
         {
-            var sut = new StatsApi(StatsSource.BFH);
+            var sut = new BFHStatsApi();
             var result = sut.GetOnlinePlayers().Result;
-
-            log.WriteLine("cs: {0}", CloudConfigurationManager.GetSetting("StatsContext"));
 
             using (var context = new StatsContext())
             {
-                context.Stats.Add(result);
+                context.PlatformStats.AddRange(result);
                 context.SaveChanges();
             }
         }

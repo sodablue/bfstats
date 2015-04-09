@@ -1,8 +1,10 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.SqlServer;
 using Microsoft.WindowsAzure;
 
 namespace bfstats.core.Data
 {
+    [DbConfigurationType(typeof(StatsConfiguration))]
     public class StatsContext : DbContext
     {
         public StatsContext() : base(CloudConfigurationManager.GetSetting("StatsContext"))
@@ -10,6 +12,14 @@ namespace bfstats.core.Data
             Database.SetInitializer<StatsContext>(new CreateDatabaseIfNotExists<StatsContext>());
         }
 
-        public DbSet<Stats> Stats { get; set; }
+        public DbSet<PlatformStat> PlatformStats { get; set; }
+    }
+
+    public class StatsConfiguration : DbConfiguration
+    {
+        public StatsConfiguration()
+        {
+            SetExecutionStrategy("System.Data.SqlClient", () => new SqlAzureExecutionStrategy());
+        }
     }
 }

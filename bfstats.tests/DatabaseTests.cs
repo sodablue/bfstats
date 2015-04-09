@@ -11,12 +11,12 @@ namespace bfstats.tests
         [Test]
         public void BF4_Stats_ToDatabase()
         {
-            var sut = new StatsApi(StatsSource.BF4);
+            var sut = new BF4StatsApi();
             var result = sut.GetOnlinePlayers().Result;
 
             using (var context = new StatsContext())
             {
-                context.Stats.Add(result);
+                context.PlatformStats.AddRange(result);
                 context.SaveChanges();
             }
         }
@@ -26,7 +26,7 @@ namespace bfstats.tests
         {
             using (var context = new StatsContext())
             {
-                var result = context.Stats.Count();
+                var result = context.PlatformStats.Count();
 
                 Assert.That(result, Is.Not.EqualTo(0));
             }

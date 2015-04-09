@@ -3,14 +3,14 @@ using bfstats.core.Data;
 using Microsoft.Azure.WebJobs;
 using System.IO;
 
-namespace bfstats.getbf4job
+namespace bfstats.getbf3job
 {
-    public class GetBF4StatsJob
+    public class GetBF3StatsJob
     {
         [NoAutomaticTrigger]
-        public static void GetStatsFromBF4(TextWriter log)
+        public static void GetStatsFromBF3(TextWriter log)
         {
-            var sut = new BF4StatsApi();
+            var sut = new BF3StatsApi();
             var result = sut.GetOnlinePlayers().Result;
 
             using (var context = new StatsContext())

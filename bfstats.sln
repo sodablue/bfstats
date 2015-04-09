@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bfstats.getbf4job", "bfstat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bfstats.getbfhjob", "bfstats.getbfhjob\bfstats.getbfhjob.csproj", "{D44B241B-8630-414E-BE71-DD82C781BA51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bfstats.getbf3job", "bfstats.getbf3job\bfstats.getbf3job.csproj", "{DACBFB87-BDEB-48A0-9300-B37D51215415}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D44B241B-8630-414E-BE71-DD82C781BA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D44B241B-8630-414E-BE71-DD82C781BA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D44B241B-8630-414E-BE71-DD82C781BA51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DACBFB87-BDEB-48A0-9300-B37D51215415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACBFB87-BDEB-48A0-9300-B37D51215415}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACBFB87-BDEB-48A0-9300-B37D51215415}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACBFB87-BDEB-48A0-9300-B37D51215415}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

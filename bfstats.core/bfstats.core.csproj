@@ -59,9 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\StatsApi.cs" />
+    <Compile Include="Api\BF3StatsApi.cs" />
+    <Compile Include="Api\BF4StatsApi.cs" />
+    <Compile Include="Api\BFHStatsApi.cs" />
+    <Compile Include="Data\Constants.cs" />
+    <Compile Include="Data\PlatformStat.cs" />
     <Compile Include="Data\StatsContext.cs" />
-    <Compile Include="Data\Stats.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
