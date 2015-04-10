@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.SqlServer;
-using Microsoft.WindowsAzure;
+using Microsoft.Azure;
 
 namespace bfstats.core.Data
 {
